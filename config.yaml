@@ -1,3 +1,7 @@
 baseURL: 'http://example.org/'
 languageCode: 'en-us'
 title: 'Hugo overlay test'
+
+disableKinds:
+  taxonomy
+  term

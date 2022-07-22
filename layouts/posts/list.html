@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <p>This line comes from <code>layouts/posts/list.html</code>.</p>
+  {{ .Content }}
+  <ul>
+  {{ range .Pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+  </ul>
+
+  <p><a href="/">Home page</a></p>
+{{ end }}

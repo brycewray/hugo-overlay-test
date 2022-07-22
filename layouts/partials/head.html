@@ -13,14 +13,14 @@
     <meta name="twitter:image" content="{{ $fallbackImg.Permalink }}" />
   {{- else }}
     {{- if eq .Page.Type "posts" }}
-      {{ warnf "%s" (resources.Get (printf "images/social-OG-text-%s.png" .Page.File.BaseFileName)) }}
       {{/*}}
+      {{ warnf "%s" (resources.Get (printf "images/social-OG-text-%s.png" .Page.File.BaseFileName)) }}
+      {{*/}}
       {{- $titleText := resources.Get (printf "images/social-OG-text-%s.png" .Page.File.BaseFileName) -}}
       {{- $finalFilter := (images.Overlay $titleText 0 0 ) -}}
       {{- $socImg = resources.Get "images/social-OG-w-BW-logo_1024x512.jpg" -}}
       {{- $socImg = $socImg | images.Filter $finalFilter -}}
-      {{*/}}
-    {{- else if eq .Page.RelPermalink "/about/" -}}
+      {{- else if eq .Page.RelPermalink "/about/" -}}
       {{- $titleText := resources.Get "images/social-OG-text-about-me.png" -}}
       {{- $finalFilter := (images.Overlay $titleText 0 0 ) -}}
       {{- $socImg = resources.Get "images/social-OG-w-BW-logo_1024x512.jpg" -}}
